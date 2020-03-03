@@ -8,9 +8,25 @@ Check the host path in the file: /root/Documents/volumes/static/images
 
 copy an image inside it
 
+```java
+kubectl apply -f pv-volume.yaml 
+```
+
+```java
+kubectl get pv
+```
+
 ## Create a PersistentVolumeClaim
 
 https://github.com/charroux/kubernetes-volumes/blob/master/pv-claim.yaml
+
+```java
+kubectl apply -f pv-claim.yaml 
+```
+
+```java
+kubectl get pvc
+```
 
 ## Create a Pod
 
