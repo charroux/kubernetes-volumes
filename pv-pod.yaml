@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: angular-pv-pod
+spec:
+  volumes:
+    - name: angular-pv-storage
+      persistentVolumeClaim:
+        claimName: images-pv-claim
+  containers:
+    - name: angular-pv-container
+      image: efrei/angularbasis:1
+      ports:
+        - containerPort: 4201
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/images"
+          name: angular-pv-storage
+
+
+
