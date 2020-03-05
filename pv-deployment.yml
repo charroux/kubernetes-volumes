@@ -1,0 +1,28 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: angular-pv-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular-pv
+  template:
+    metadata:
+      labels:
+        app: angular-pv
+    spec:
+      containers:
+      - name: angular-pv-container
+        image: efrei/angularbasis:2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 4200
+        volumeMounts:
+        - mountPath: "/app/src/images"
+          name: angular-pv-storage
+      volumes:
+      - name: angular-pv-storage
+        persistentVolumeClaim:
+          claimName: images-pv-claim
+
