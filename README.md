@@ -174,7 +174,17 @@ So before removal the protection must be udpated.
 
 Edit the pv:
 
+```java
 kubectl edit pvc YOUR_PVC -n NAME_SPACE
+```
+
+Retreive all nameespaces with:
+
+```java
+kubectl get namespace
+```
+
+By default, the default namespace is used.
 
 Manually edit and put # before this line: -kubernetes.io/pvc-protection
 
@@ -184,9 +194,15 @@ i to insert
 ESC then :w to save
 ESC then :q to quit
 
-You should now be abble to detele the volume, then the volume claim using:
+You should now be abble to detele the volume:
 
 ```java
-kubectl delete ...
+kubectl delete pv --all
+```
+
+Then the volume claim:
+
+```java
+kubectl delete pvc --all
 ```
 
