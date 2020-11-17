@@ -37,11 +37,31 @@ Look at https://github.com/charroux/kubernetes-volumes to discover how to docker
 
 Here is a volume definition: https://github.com/charroux/kubernetes-volumes/blob/master/pv-volume.yaml
 
-Where the host path to the persistent volume is set to: /root/Documents/volumes/public
+Where the host path to the persistent volume is set to: /host
 
 This should be an existing directory in your local machine, and IT MUST contain the content of: https://github.com/charroux/kubernetes-volumes/tree/master/public
 
 or any other HTML pages.
+
+### Kubernetes Volumes on minikube
+
+If you are using minikube you must do extra configuration. 
+Indeed, minikube is running at the top of a virtualization system (virtual box as an example) 
+and you must mount a local directory toward a munikube directory using:
+
+mimikube mount .:/host
+
+where . is the local directory (this one where you are typing the command) and /host is a directory inside the minikune virtual machine. 
+
+The current directory may contain the html pto be displayed by the application.
+So, copy inside the current directory the content of: https://github.com/charroux/kubernetes-volumes/tree/master/public
+or any other HTML pages.
+
+### Kubernetes Volumes on other implementation than minikube
+
+The host path in the persistent volume yaml file should be an existing directory in your local machine, and IT MUST contain the content of: https://github.com/charroux/kubernetes-volumes/tree/master/public or any other HTML pages.
+
+## Creating the local volume
 
 Then, create the local volume using:
 
@@ -127,7 +147,7 @@ where __dirname is given by the Docker command WORKDIR in the docker file: https
 
 Deploy the app with 
 ```java
-kubectl apply -f pv-deployment.yaml 
+kubectl apply -f pv-deployment.yml 
 ```
 
 Then check the pod deployed until its state is running: 

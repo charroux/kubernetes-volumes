@@ -11,5 +11,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/root/Documents/volumes/public"
-
+    path: "/host"

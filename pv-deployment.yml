@@ -17,7 +17,7 @@ spec:
         image: efrei/hellonode:1
         imagePullPolicy: Always
         ports:
-        - containerPort: 4000
+        - containerPort: 8080
         volumeMounts:
         - mountPath: /usr/src/app/public
           name: node-pv-storage
