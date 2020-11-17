@@ -187,16 +187,6 @@ And finaly, how to check the app in a web browser?
 
 Get first the IP addresse using:
 
-```java
-kubectl describe pods
-```
-
-read the IP address: IP: 10.42.0.126 as an example
-
-Test it with: http://10.42.0.126:8080/
-
-Notice that this is the IP address of the pod and remerber that this addresse is ephemeral since a pod can be destroyed at any moment and a new one can be created on a new IP address. You must use a service in front of a pod to keep the same IP address (see https://github.com/charroux/kubernetes).
-
 ## delete resource
 
 Volume are protected against removal and deleting a volume is a little bit tricky.
