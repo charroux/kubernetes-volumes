@@ -39,10 +39,6 @@ Here is a volume definition: https://github.com/charroux/kubernetes-volumes/blob
 
 Where the host path to the persistent volume is set to: /host
 
-This should be an existing directory in your local machine, and IT MUST contain the content of: https://github.com/charroux/kubernetes-volumes/tree/master/public
-
-or any other HTML pages.
-
 ### Kubernetes Volumes on minikube
 
 If you are using minikube you must do extra configuration. 
