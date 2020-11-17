@@ -49,7 +49,7 @@ mimikube mount .:/host
 
 where . is the local directory (this one where you are typing the command) and /host is a directory inside the minikune virtual machine. 
 
-The current directory may contain the html pto be displayed by the application.
+The current directory may contain the html page be displayed by the application.
 So, copy inside the current directory the content of: https://github.com/charroux/kubernetes-volumes/tree/master/public
 or any other HTML pages.
 
