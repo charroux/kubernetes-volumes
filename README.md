@@ -53,7 +53,7 @@ The current directory may contain the html page be displayed by the application.
 So, copy inside the current directory the content of: https://github.com/charroux/kubernetes-volumes/tree/master/public
 or any other HTML pages.
 
-### Kubernetes Volumes on other implementation than minikube
+### Kubernetes Volumes on another implementation than minikube
 
 The host path in the persistent volume yaml file should be an existing directory in your local machine, and IT MUST contain the content of: https://github.com/charroux/kubernetes-volumes/tree/master/public or any other HTML pages.
 
