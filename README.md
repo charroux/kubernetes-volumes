@@ -168,7 +168,22 @@ ls /usr/src/app/public
 
 That's it! You should see the HTML content of the real directory on your machine.
 
-Finaly, how to check the app in a web browser?
+## Create a service in front of the deployment
+
+See https://github.com/charroux/kubernetes-minikube for information about services.
+
+Or simply use
+
+```java
+kubectl expose deployment node-pv-deployment --type=NodePort --port=8080
+```
+
+Then
+```java
+minikube service myservice --url
+```
+
+And finaly, how to check the app in a web browser?
 
 Get first the IP addresse using:
 
